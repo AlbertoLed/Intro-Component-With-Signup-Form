@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(0, 100%, 74%);
+    background-image: url(./images/bg-intro-mobile.png);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-1, .section-2 {
+    width: 87%;
+}
+.section-1 {
+    margin-top: 85px;
+}
+.section-2 {
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+h1, p {
+    text-align: center;
+    color: #ffffff;
+}
+h1 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+#free-7-days {
+    background-color: hsl(248, 32%, 49%);
+    color: #ffffff;
+    padding: 20px 50px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    box-shadow: 0 8px 2px 0 rgba(0, 0, 0, .2);
+}
+strong {
+    font-weight: 600;
+}
+form {
+    background-color: #ffffff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 440px;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 8px 2px 0 rgba(0, 0, 0, .2);
+}
+input, button {
+    height: 55px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+input {
+    color: hsl(249, 10%, 26%);
+    border: 1px solid hsl(246, 25%, 77%);
+    padding: 0 20px;
+}
+input::placeholder {
+    color: hsl(249, 10%, 26%);
+    border: 1px solid hsl(246, 25%, 77%);
+    font-weight: 600;
+}
+input:focus {
+    outline: 1px solid hsl(248, 32%, 49%);;
+}
+.empty-state {
+    border: 2px solid hsl(0, 100%, 74%);
+}
+.empty-state::placeholder {
+    color: hsl(0, 100%, 74%);
+}
+.hidden {
+    
+}
+button {
+    width: 100%;
+    background-color: hsl(154, 59%, 51%);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    text-transform: uppercase;
+    box-shadow: 0 4px 0 0 #26AD48;
+    height: 51px;
+    padding-top: 4px;
+    transition:all .3s;
+}
+button:hover {
+    background-color: #6AEB92;
+    box-shadow: 0 4px 0 0 #5FD484;
+    cursor: pointer;
+}
+form p {
+    color: hsl(246, 25%, 77%);
+    font-size: .68rem;
+    padding: 0 15px;
+    font-weight: 500;
+    line-height: 1.3rem;
+}
+a {
+    color: hsl(0, 100%, 74%);
+    font-weight: 600;
+}
+
+
+
