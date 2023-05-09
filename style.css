@@ -53,13 +53,14 @@ form {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    height: 440px;
+    /* height: 440px; */
     justify-content: space-between;
     border-radius: 10px;
     box-shadow: 0 8px 2px 0 rgba(0, 0, 0, .2);
 }
 input, button {
     height: 55px;
+    margin-bottom: 15px;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
 }
@@ -82,8 +83,15 @@ input:focus {
 .empty-state::placeholder {
     color: hsl(0, 100%, 74%);
 }
+.error-ms {
+    color:hsl(0, 100%, 74%);
+    text-align: right;
+    font-style: italic;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
 .hidden {
-    
+    display: none;
 }
 button {
     width: 100%;

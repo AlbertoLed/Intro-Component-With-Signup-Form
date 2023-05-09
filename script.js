@@ -1,5 +1,3 @@
-// const btn = document.querySelector('button');
-// const inputs = document.querySelectorAll('input');
 const form = document.querySelector('form');
 
 form.addEventListener('click', function(e) {
@@ -9,16 +7,43 @@ form.addEventListener('click', function(e) {
     // If clicked on button and any input is empty then apply empty state on each empty input
     if(target.matches('#btn-submit')) {
         e.preventDefault();
-        // console.log('btn');
-        for(i = 0; i < 4; i++) {
-            if(!form.children[i].value) {
-                form.children[i].classList.add('empty-state');
+        
+        let element, errorElement;
+        for(i = 0; i < 8; i++) {
+            element = form.children[i];
+            errorElement = form.children[i + 1];
+
+            if(!element.value) {
+                element.classList.add('empty-state');
+
+                // Show error message
+                errorElement.classList.remove('hidden');
 
                 // If email input is empty then change placeholder to show example
-                if(form.children[i].matches('#email')) {
-                    addEmailExample(form.children[i]);
+                if(element.matches('#email')) {
+                    addEmailExample(element);
+                    errorElement.innerText = 'Email cannot be empty';
                 }
             }
+            else if(element.matches('#email')) {
+                const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
+
+                console.log(re.test(element.value));
+                // If email input is wrong then send error message
+                if(!re.test(element.value)) {
+
+                    element.classList.add('empty-state');
+                    errorElement.innerText = 'Looks like this is not an email';
+                    errorElement.classList.remove('hidden');
+                }
+                else {
+                    errorElement.classList.add('hidden');
+                }
+            }
+            else {
+                errorElement.classList.add('hidden');
+            }
+            i++;
         }
     }
     // Remove Empty State if focus on the input
@@ -29,24 +54,9 @@ form.addEventListener('click', function(e) {
         target.matches('#password')) {
         target.classList.remove('empty-state');
     }
-    
-    
 });
 
 // Change Email's placeholder to show example
 function addEmailExample(target) {
     target.placeholder = "email@example.com";
 }
-
-
-// const form = document.querySelector('form');
-// const firstName = document.querySelector('#first-name');
-
-// form.addEventListener ("submit", (e) => {
-//     e.preventDefault();
-// });
-
-// function validate() {
-//     firstName.style.border = '1px solid hsl(0, 100%, 74%)';
-//     console.log('hola');
-// }
