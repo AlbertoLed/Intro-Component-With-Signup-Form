@@ -79,7 +79,21 @@ input:focus {
 }
 .empty-state {
     border: 2px solid hsl(0, 100%, 74%);
+    position: relative;
+    background-image: url(images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
 }
+/* .empty-state:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    
+} */
 .empty-state::placeholder {
     color: hsl(0, 100%, 74%);
 }
