@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 
 form.addEventListener('click', function(e) {
     const target = e.target;
+    let isFormOk = true;
     // console.log(target);
 
     // If clicked on button and any input is empty then apply empty state on each empty input
@@ -15,6 +16,7 @@ form.addEventListener('click', function(e) {
 
             if(!element.value) {
                 element.classList.add('empty-state');
+                isFormOk = false;
 
                 // Show error message
                 errorElement.classList.remove('hidden');
@@ -35,6 +37,7 @@ form.addEventListener('click', function(e) {
                     element.classList.add('empty-state');
                     errorElement.innerText = 'Looks like this is not an email';
                     errorElement.classList.remove('hidden');
+                    isFormOk = false;
                 }
                 else {
                     errorElement.classList.add('hidden');
@@ -44,6 +47,11 @@ form.addEventListener('click', function(e) {
                 errorElement.classList.add('hidden');
             }
             i++;
+        }
+
+        if(isFormOk) {
+            form.lastElementChild.classList.remove('hidden');
+            form.lastElementChild.classList.add('flex');
         }
     }
     // Remove Empty State if focus on the input
